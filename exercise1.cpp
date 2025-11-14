@@ -1,12 +1,29 @@
+/*
+
+    CONTROL FLOW STATEMENTS IN PROGRAMMING
+
+    1) Selection statements
+       - if
+       - if...else
+       - ternary operator
+       - nested if
+       - if...else if...else
+       - switch case
+
+    2) Iteration statements (loops)
+       - while loop
+       - do----while loop
+       - for loop
+       - foreach (array)
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main() {
-    // Declare variables
     string firstName, lastName, fullName, favoriteMeal, favoriteMovie, reason;
 
-    // Get user input
     cout << "Enter your first name: ";
     getline(cin, firstName);
 
@@ -25,15 +42,18 @@ int main() {
     cout << "Why are you in this class? ";
     getline(cin, reason);
 
-    // Display the output neatly
-    cout << "\n========= USER PROFILE =========\n";
-    cout << "First Name      : " << firstName << endl;
-    cout << "Last Name       : " << lastName << endl;
-    cout << "Full Name       : " << fullName << endl;
-    cout << "Favorite Meal   : " << favoriteMeal << endl;
-    cout << "Favorite Movie  : " << favoriteMovie << endl;
-    cout << "Reason in Class : " << reason << endl;
-    cout << "================================\n";
+    cout << "\n--------------------------------------------------" << endl;
+    cout << "| USER PROFILE                                   |" << endl;
+    cout << "--------------------------------------------------" << endl;
+
+    cout << "| First Name      : " << firstName << " |" << endl;
+    cout << "| Last Name       : " << lastName  << " |" << endl;
+    cout << "| Full Name       : " << fullName << " |" << endl;
+    cout << "| Favorite Meal   : " << favoriteMeal << " |" << endl;
+    cout << "| Favorite Movie  : " << favoriteMovie << " |" << endl;
+    cout << "| Reason in Class : " << reason << " |" << endl;
+
+    cout << "--------------------------------------------------" << endl;
 
     return 0;
 }
