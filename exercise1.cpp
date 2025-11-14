@@ -1,16 +1,15 @@
-/*
-
+/* 
     CONTROL FLOW STATEMENTS IN PROGRAMMING
 
-    1) Selection statements
+    1) Selection Statements
        - if
-       - if...else
-       - ternary operator
+       - if…else
        - nested if
-       - if...else if...else
+       - if…else if…else
        - switch case
+       - ternary operator
 
-    2) Iteration statements (loops)
+    2) Iteration Statements (Loops)
        - while loop
        - do----while loop
        - for loop
@@ -22,6 +21,7 @@
 using namespace std;
 
 int main() {
+
     string firstName, lastName, fullName, favoriteMeal, favoriteMovie, reason;
 
     cout << "Enter your first name: ";
@@ -42,18 +42,42 @@ int main() {
     cout << "Why are you in this class? ";
     getline(cin, reason);
 
-    cout << "\n--------------------------------------------------" << endl;
-    cout << "| USER PROFILE                                   |" << endl;
-    cout << "--------------------------------------------------" << endl;
+    // -----------------------------
+    // PERFECTLY ALIGNED OUTPUT BOX
+    // -----------------------------
 
-    cout << "| First Name      : " << firstName << " |" << endl;
-    cout << "| Last Name       : " << lastName  << " |" << endl;
-    cout << "| Full Name       : " << fullName << " |" << endl;
-    cout << "| Favorite Meal   : " << favoriteMeal << " |" << endl;
-    cout << "| Favorite Movie  : " << favoriteMovie << " |" << endl;
-    cout << "| Reason in Class : " << reason << " |" << endl;
+    int width = 50; // total inside width for formatting
 
-    cout << "--------------------------------------------------" << endl;
+    auto printRow = [&](string label, string value) {
+        string content = label + ": " + value;
+        cout << "| " << content;
+
+        int remaining = width - content.length();
+        for (int i = 0; i < remaining - 2; i++)
+            cout << " ";
+
+        cout << " |" << endl;
+    };
+
+    cout << "\n" << "+" << string(width, '-') << "+" << endl;
+
+    // Center "USER PROFILE"
+    string title = "USER PROFILE";
+    cout << "| " << title;
+    for (int i = 0; i < width - title.length() - 1; i++)
+        cout << " ";
+    cout << "|" << endl;
+
+    cout << "+" << string(width, '-') << "+" << endl;
+
+    printRow("First Name", firstName);
+    printRow("Last Name", lastName);
+    printRow("Full Name", fullName);
+    printRow("Favorite Meal", favoriteMeal);
+    printRow("Favorite Movie", favoriteMovie);
+    printRow("Reason in Class", reason);
+
+    cout << "+" << string(width, '-') << "+" << endl;
 
     return 0;
 }
